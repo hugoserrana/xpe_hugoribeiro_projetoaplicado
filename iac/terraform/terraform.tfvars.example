@@ -1,0 +1,15 @@
+# Copie para terraform.tfvars e ajuste conforme o ambiente.
+region            = "us-east-1"
+environment       = "prod"
+project           = "moro"
+vpc_cidr          = "10.0.0.0/16"
+azs               = ["us-east-1a", "us-east-1b"]
+
+db_name           = "moro"
+db_username       = "moro_admin"
+
+# Após o primeiro apply, faça push da imagem para o ECR e informe a tag:
+# api_image       = "123456789012.dkr.ecr.us-east-1.amazonaws.com/moro-api:v1"
+api_desired_count = 2
+api_cpu           = 512
+api_memory        = 1024
