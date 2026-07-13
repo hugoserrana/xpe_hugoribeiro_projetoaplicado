@@ -1,0 +1,349 @@
+<mxfile host="app.diagrams.net" agent="Morô DAS" version="24.7.7">
+  <diagram id="c4-nivel1" name="c4-nivel1-contexto">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="titulo1" value="Morô — C4 Nível 1: Diagrama de Contexto do Sistema (DAS · Sprint 2)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="225" y="10" width="800" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Pessoas -->
+        <mxCell id="p-morador" value="&lt;b&gt;Morador&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Pessoa]&lt;br&gt;Proprietário, locatário ou dependente&lt;/font&gt;" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#08427B;strokeColor=#073B6F;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="120" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p-sindico" value="&lt;b&gt;Síndico / Administradora&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Pessoa]&lt;br&gt;Gestão do condomínio&lt;/font&gt;" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#08427B;strokeColor=#073B6F;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="320" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p-operacao" value="&lt;b&gt;Equipe Operacional&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Pessoa]&lt;br&gt;Porteiro, zelador, segurança&lt;/font&gt;" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#08427B;strokeColor=#073B6F;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="520" width="210" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Sistema -->
+        <mxCell id="s-moro" value="&lt;b&gt;Plataforma Morô&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Sistema de Software]&lt;br&gt;Gestão condominial multitenant&lt;br&gt;(web + mobile)&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#1168BD;strokeColor=#0E5A9D;fontColor=#FFFFFF;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="480" y="300" width="280" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Sistemas externos -->
+        <mxCell id="e-cognito" value="&lt;b&gt;Amazon Cognito&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Sistema Externo]&lt;br&gt;Identidade e login social&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#8A8A8A;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="980" y="90" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-whats" value="&lt;b&gt;WhatsApp Business API&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Sistema Externo]&lt;br&gt;Mensageria&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#8A8A8A;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="980" y="220" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-fcm" value="&lt;b&gt;FCM / APNs&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Sistema Externo]&lt;br&gt;Push notifications&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#8A8A8A;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="980" y="350" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ses" value="&lt;b&gt;Amazon SES&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Sistema Externo]&lt;br&gt;E-mail transacional&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#8A8A8A;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="980" y="480" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cam" value="&lt;b&gt;Câmeras IP (NVR local)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Sistema Externo]&lt;br&gt;Streams RTSP/HLS&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#8A8A8A;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="980" y="610" width="210" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Relações -->
+        <mxCell id="r-morador" value="Usa [HTTPS]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;" edge="1" parent="1" source="p-morador" target="s-moro">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r-sindico" value="Gerencia [HTTPS]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;" edge="1" parent="1" source="p-sindico" target="s-moro">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r-operacao" value="Opera [HTTPS]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;" edge="1" parent="1" source="p-operacao" target="s-moro">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r-cognito" value="Autentica via [OIDC/OAuth2]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=1;exitY=0.1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="s-moro" target="e-cognito">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r-whats" value="Notifica via [API]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="s-moro" target="e-whats">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r-fcm" value="Envia push via [API]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="s-moro" target="e-fcm">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r-ses" value="Envia e-mail via [API]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="s-moro" target="e-ses">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r-cam" value="Agrega streams de [HLS]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=1;exitY=0.9;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="s-moro" target="e-cam">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Legenda -->
+        <mxCell id="leg1" value="&lt;b&gt;Legenda:&lt;/b&gt; azul-escuro = pessoa · azul = sistema em escopo · cinza = sistema externo" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="740" width="600" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="c4-nivel2" name="c4-nivel2-conteineres">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1420" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="titulo2" value="Morô — C4 Nível 2: Diagrama de Contêineres (DAS · Sprint 2)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="310" y="10" width="800" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p-usuarios" value="&lt;b&gt;Usuários&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Pessoa]&lt;br&gt;Morador, Síndico, Operação&lt;/font&gt;" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#08427B;strokeColor=#073B6F;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="60" width="210" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Fronteira do sistema -->
+        <mxCell id="b-moro" value="Plataforma Morô [Sistema de Software]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;verticalAlign=bottom;align=left;spacingLeft=8;spacingBottom=4;fontSize=12;fontStyle=2;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="190" width="1030" height="740" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c-mobile" value="&lt;b&gt;App Mobile&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Contêiner: Flutter · Redux]&lt;br&gt;iOS + Android, base única&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="140" y="240" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c-web" value="&lt;b&gt;Dashboard Web&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Contêiner: React + Vite · Redux Toolkit]&lt;br&gt;Gestão para síndico/administradora&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="680" y="240" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c-cdn" value="&lt;b&gt;CloudFront + S3&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Contêiner: CDN]&lt;br&gt;Entrega do dashboard e assets&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="690" y="390" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c-alb" value="&lt;b&gt;Application Load Balancer&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Contêiner: AWS ALB]&lt;br&gt;Entrada HTTPS, health checks&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="360" y="390" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c-api" value="&lt;b&gt;API REST&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Contêiner: Go (chi) · ECS Fargate]&lt;br&gt;Regras de negócio, RBAC, multitenancy&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="550" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c-worker" value="&lt;b&gt;Notification Worker&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Contêiner: Go · ECS Fargate]&lt;br&gt;Consome SQS e despacha multicanal&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="800" y="560" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sns" value="&lt;b&gt;SNS + SQS&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Contêiner: Mensageria]&lt;br&gt;Fan-out de eventos de domínio&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="800" y="770" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="db-redis" value="&lt;b&gt;ElastiCache Redis&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Cache]&lt;br&gt;Cache multicamada, sessões efêmeras&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="110" y="540" width="180" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="db-aurora" value="&lt;b&gt;Aurora PostgreSQL&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Serverless v2]&lt;br&gt;Dados transacionais, isolados por tenant_id&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="150" y="760" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-s3" value="&lt;b&gt;S3 Uploads&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Object Storage]&lt;br&gt;Anexos: fotos, comprovantes, documentos&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="770" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Externos -->
+        <mxCell id="e2-cognito" value="&lt;b&gt;Amazon Cognito&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Sistema Externo]&lt;br&gt;Identidade&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#8A8A8A;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="560" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e2-canais" value="&lt;b&gt;FCM/APNs · WhatsApp · SES&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Sistemas Externos]&lt;br&gt;Canais de notificação&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#999999;strokeColor=#8A8A8A;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="700" width="200" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Relações -->
+        <mxCell id="r2-u-mobile" value="Usa [HTTPS]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="p-usuarios" target="c-mobile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-u-web" value="Usa [HTTPS]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="p-usuarios" target="c-web">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-web-cdn" value="Servido por" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;" edge="1" parent="1" source="c-web" target="c-cdn">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-mobile-alb" value="Chama API [HTTPS/JSON]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;" edge="1" parent="1" source="c-mobile" target="c-alb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-web-alb" value="Chama API [HTTPS/JSON]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c-web" target="c-alb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-alb-api" value="Encaminha [HTTP]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;" edge="1" parent="1" source="c-alb" target="c-api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-api-aurora" value="Lê/escreve [SQL/TLS]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="c-api" target="db-aurora">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-api-redis" value="Cacheia [RESP]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;" edge="1" parent="1" source="c-api" target="db-redis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-api-s3" value="Armazena anexos [S3 API]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="c-api" target="c-s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-api-sns" value="Publica eventos" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.9;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c-api" target="c-sns">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="575" y="720" />
+              <mxPoint x="740" y="720" />
+              <mxPoint x="740" y="810" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r2-sns-worker" value="Entrega via SQS" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;" edge="1" parent="1" source="c-sns" target="c-worker">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-worker-canais" value="Despacha" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c-worker" target="e2-canais">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="745" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r2-api-cognito" value="Valida tokens" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=1;exitY=0.9;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="c-api" target="e2-cognito">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="690" />
+              <mxPoint x="1120" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="c4-nivel3" name="c4-nivel3-componentes">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1420" pageHeight="1120" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="titulo3" value="Morô — C4 Nível 3: Componentes da API REST em Go (DAS · Sprint 2)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="310" y="10" width="800" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Fronteira do contêiner -->
+        <mxCell id="b-api" value="API REST [Contêiner: Go (chi)] — 1 componente = 1 pacote do código-fonte" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;verticalAlign=bottom;align=left;spacingLeft=8;spacingBottom=4;fontSize=12;fontStyle=2;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="1080" height="840" as="geometry" />
+        </mxCell>
+
+        <mxCell id="k-router" value="&lt;b&gt;Router&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Componente: chi]&lt;br&gt;Roteamento, middlewares, CORS&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="110" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="k-authmw" value="&lt;b&gt;Auth Middleware&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Componente: Go]&lt;br&gt;Valida JWT, injeta claims, RequireTenant/RequirePapel&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="800" y="110" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="k-authsvc" value="&lt;b&gt;Auth Service&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Componente: Go]&lt;br&gt;Login (bcrypt), login social/OTP, seleção de tenant, RBAC&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="800" y="240" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="k-moradores" value="&lt;b&gt;Moradores&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[F14] pessoas, unidades, vínculos&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="110" y="280" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k-ocorrencias" value="&lt;b&gt;Ocorrências&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[F01] workflow + timeline&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="280" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k-mural" value="&lt;b&gt;Mural&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[F03] avisos + recibo de ciente&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="280" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k-encomendas" value="&lt;b&gt;Encomendas&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[F05] ciclo de vida + palavra-passe&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="110" y="400" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k-financeiro" value="&lt;b&gt;Financeiro&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[F16] lançamentos + agregações&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="400" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k-assembleia" value="&lt;b&gt;Assembleia&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[F02] pautas, voto ponderado, quórum&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="400" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k-visitantes" value="&lt;b&gt;Visitantes&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[F08] convites, validação, acessos&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="110" y="520" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k-rondas" value="&lt;b&gt;Rondas&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[F11] rotas, check-in, dashboard&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="520" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k-portaria" value="&lt;b&gt;Portaria&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[F12] comunicação portaria–morador&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="520" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k-plataforma" value="&lt;b&gt;Plataforma (backoffice)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;papéis PLATAFORMA_*, gestão de tenants&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="110" y="640" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k-notif" value="&lt;b&gt;Notificações&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[F18] central transversal (in-app + preferências)&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="850" y="460" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="k-db" value="&lt;b&gt;DB Pool&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Componente: pgxpool]&lt;br&gt;Conexões com Aurora, retry&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#85BBF0;strokeColor=#78A8D8;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="760" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Externos ao contêiner -->
+        <mxCell id="x-aurora" value="&lt;b&gt;Aurora PostgreSQL&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Contêiner: Serverless v2]&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="450" y="940" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="x-sns" value="&lt;b&gt;SNS&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;[Contêiner: Mensageria]&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#438DD5;strokeColor=#3C7FC0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="880" y="950" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Relações -->
+        <mxCell id="q-router-authmw" value="Aplica" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;" edge="1" parent="1" source="k-router" target="k-authmw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-authmw-authsvc" value="Usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;" edge="1" parent="1" source="k-authmw" target="k-authsvc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-r-moradores" value="Encaminha" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="k-router" target="k-moradores">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-r-ocorrencias" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="k-router" target="k-ocorrencias">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-r-mural" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="k-router" target="k-mural">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-r-encomendas" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="k-router" target="k-encomendas">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-r-assembleia" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="k-router" target="k-assembleia">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-r-visitantes" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="k-router" target="k-visitantes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-r-rondas" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.4;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="k-router" target="k-rondas">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-r-portaria" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.6;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="k-router" target="k-portaria">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-moradores-db" value="Consulta" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k-plataforma" target="k-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-encomendas-notif" value="Publica notificação" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k-encomendas" target="k-notif">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="215" y="495" />
+              <mxPoint x="810" y="495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="q-portaria-notif" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k-portaria" target="k-notif">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-visitantes-notif" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.9;entryDx=0;entryDy=0;" edge="1" parent="1" source="k-visitantes" target="k-notif">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="215" y="620" />
+              <mxPoint x="800" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="q-notif-db" value="Consulta" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k-notif" target="k-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-notif-sns" value="Publica evento (produção)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="k-notif" target="x-sns">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q-db-aurora" value="TLS" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;fontColor=#404040;endArrow=blockThin;" edge="1" parent="1" source="k-db" target="x-aurora">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
