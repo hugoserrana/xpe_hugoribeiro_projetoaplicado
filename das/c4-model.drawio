@@ -5,7 +5,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
-        <mxCell id="titulo1" value="Morô — C4 Nível 1: Diagrama de Contexto do Sistema (DAS · Sprint 2)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+        <mxCell id="titulo1" value="Morô — C4 Nível 1: Diagrama de Contexto do Sistema (DAS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
           <mxGeometry x="225" y="10" width="800" height="30" as="geometry" />
         </mxCell>
 
@@ -101,7 +101,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
-        <mxCell id="titulo2" value="Morô — C4 Nível 2: Diagrama de Contêineres (DAS · Sprint 2)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+        <mxCell id="titulo2" value="Morô — C4 Nível 2: Diagrama de Contêineres (DAS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
           <mxGeometry x="310" y="10" width="800" height="30" as="geometry" />
         </mxCell>
 
@@ -217,7 +217,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
-        <mxCell id="titulo3" value="Morô — C4 Nível 3: Componentes da API REST em Go (DAS · Sprint 2)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+        <mxCell id="titulo3" value="Morô — C4 Nível 3: Componentes da API REST em Go (DAS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
           <mxGeometry x="310" y="10" width="800" height="30" as="geometry" />
         </mxCell>
 
