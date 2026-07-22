@@ -1,0 +1,137 @@
+<mxfile host="app.diagrams.net" agent="Morô DAS" version="24.7.7">
+  <diagram id="modelo-dados-er" name="modelo-dados-er">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="titulo" value="Morô — Modelo de Dados Físico do MVP, multitenant por condominio_id (DAS · Sprint 3)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="250" y="10" width="900" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Entidades -->
+        <mxCell id="t-pessoa" value="&lt;b&gt;&lt;font color=&quot;#003C58&quot;&gt;PESSOA&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id: uuid «PK»&lt;br&gt;nome: text&lt;br&gt;email: text «UK»&lt;br&gt;cpf: text «UK»&lt;br&gt;senha_hash: text&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingTop=4;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#003C58;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="60" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="t-condominio" value="&lt;b&gt;&lt;font color=&quot;#003C58&quot;&gt;CONDOMINIO (tenant)&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id: uuid «PK»&lt;br&gt;nome: text&lt;br&gt;cnpj: text «UK»&lt;br&gt;ativo: boolean&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingTop=4;verticalAlign=top;fillColor=#E8F4F8;strokeColor=#003C58;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="60" width="220" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="t-bloco" value="&lt;b&gt;&lt;font color=&quot;#003C58&quot;&gt;BLOCO&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id: uuid «PK»&lt;br&gt;&lt;b&gt;condominio_id: uuid «FK·tenant»&lt;/b&gt;&lt;br&gt;nome: text&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingTop=4;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#003C58;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="180" y="280" width="230" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t-vinculo" value="&lt;b&gt;&lt;font color=&quot;#003C58&quot;&gt;VINCULO_PAPEL&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id: uuid «PK»&lt;br&gt;pessoa_id: uuid «FK»&lt;br&gt;&lt;b&gt;condominio_id: uuid «FK·tenant»&lt;/b&gt;&lt;br&gt;unidade_id: uuid «FK»&lt;br&gt;papel: text (RBAC)&lt;br&gt;tipo_vinculo: text&lt;br&gt;ativo: boolean&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingTop=4;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#003C58;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="820" y="280" width="240" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="t-unidade" value="&lt;b&gt;&lt;font color=&quot;#003C58&quot;&gt;UNIDADE&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id: uuid «PK»&lt;br&gt;bloco_id: uuid «FK»&lt;br&gt;identificador: text&lt;br&gt;fracao_ideal: numeric&lt;br&gt;palavra_passe: text (F05)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingTop=4;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#003C58;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="180" y="490" width="230" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="t-ocorrencia" value="&lt;b&gt;&lt;font color=&quot;#003C58&quot;&gt;OCORRENCIA&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id: uuid «PK»&lt;br&gt;&lt;b&gt;condominio_id: uuid «FK·tenant»&lt;/b&gt;&lt;br&gt;autor_pessoa_id: uuid «FK»&lt;br&gt;status: text «CHECK»&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingTop=4;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#003C58;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="700" width="230" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="t-ocorrencia-evento" value="&lt;b&gt;&lt;font color=&quot;#003C58&quot;&gt;OCORRENCIA_EVENTO&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id: uuid «PK»&lt;br&gt;ocorrencia_id: uuid «FK»&lt;br&gt;tipo: text&lt;br&gt;mensagem: text (append-only)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingTop=4;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#003C58;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="910" width="230" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="t-aviso" value="&lt;b&gt;&lt;font color=&quot;#003C58&quot;&gt;AVISO&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id: uuid «PK»&lt;br&gt;&lt;b&gt;condominio_id: uuid «FK·tenant»&lt;/b&gt;&lt;br&gt;fixado: boolean&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingTop=4;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#003C58;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="370" y="700" width="230" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t-aviso-ciente" value="&lt;b&gt;&lt;font color=&quot;#003C58&quot;&gt;AVISO_CIENTE&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;font style=&quot;font-size:11px&quot;&gt;aviso_id: uuid «PK/FK»&lt;br&gt;pessoa_id: uuid «PK/FK»&lt;br&gt;(recibo idempotente)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingTop=4;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#003C58;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="370" y="910" width="230" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="t-encomenda" value="&lt;b&gt;&lt;font color=&quot;#003C58&quot;&gt;ENCOMENDA&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id: uuid «PK»&lt;br&gt;&lt;b&gt;condominio_id: uuid «FK·tenant»&lt;/b&gt;&lt;br&gt;unidade_id: uuid «FK»&lt;br&gt;status: text «CHECK»&lt;br&gt;sem_local: boolean (R3)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingTop=4;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#003C58;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="660" y="700" width="230" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="t-lancamento" value="&lt;b&gt;&lt;font color=&quot;#003C58&quot;&gt;LANCAMENTO_FINANCEIRO&lt;/font&gt;&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id: uuid «PK»&lt;br&gt;&lt;b&gt;condominio_id: uuid «FK·tenant»&lt;/b&gt;&lt;br&gt;tipo: text&lt;br&gt;valor: numeric&lt;br&gt;data_competencia: date&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingTop=4;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#003C58;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="950" y="700" width="250" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Relações (1:N pé-de-galinha) -->
+        <mxCell id="e-cond-bloco" value="possui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-condominio" target="t-bloco">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="295" y="117" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-bloco-unidade" value="contém" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-bloco" target="t-unidade">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-pessoa-vinculo" value="assume" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-pessoa" target="t-vinculo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cond-vinculo" value="escopo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-condominio" target="t-vinculo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="117" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-unidade-vinculo" value="vincula" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-unidade" target="t-vinculo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="522" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-cond-ocorrencia" value="registra" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=0.1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-condominio" target="t-ocorrencia">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="582" y="640" />
+              <mxPoint x="195" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-pessoa-ocorrencia" value="autora" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-pessoa" target="t-ocorrencia">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1300" y="125" />
+              <mxPoint x="1300" y="665" />
+              <mxPoint x="252" y="665" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-ocorrencia-evento" value="timeline" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-ocorrencia" target="t-ocorrencia-evento">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cond-aviso" value="publica" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-condominio" target="t-aviso">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="626" y="655" />
+              <mxPoint x="485" y="655" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-aviso-ciente" value="recibo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-aviso" target="t-aviso-ciente">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cond-encomenda" value="controla" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-condominio" target="t-encomenda">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="714" y="615" />
+              <mxPoint x="775" y="615" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-unidade-encomenda" value="destino" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-unidade" target="t-encomenda">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="295" y="680" />
+              <mxPoint x="717" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-cond-lancamento" value="contabiliza" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#003C58;fontSize=10;fontColor=#404040;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;exitX=0.9;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t-condominio" target="t-lancamento">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="758" y="600" />
+              <mxPoint x="1075" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="leg" value="&lt;b&gt;Legenda:&lt;/b&gt; «PK» chave primária · «UK» única · «FK» estrangeira · &lt;b&gt;«FK·tenant»&lt;/b&gt; = isolamento multitenant (condominio_id derivado do JWT, ADR-005) · notação pé-de-galinha (1:N)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1040" width="1100" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
